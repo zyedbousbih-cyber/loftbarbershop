@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE LOFT | Haute Coiffure Masculine</title>
+    <title>THE LOFT | Barber Shop Paris</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -32,7 +32,7 @@
             cursor: none;
         }
 
-        /* --- CURSEUR DYNAMIQUE --- */
+        /* --- CURSEUR --- */
         #cursor {
             position: fixed; width: 10px; height: 10px;
             background: var(--color-accent); border-radius: 50%;
@@ -41,7 +41,7 @@
         }
         .cursor-big { width: 50px !important; height: 50px !important; }
 
-        /* --- NAVIGATION --- */
+        /* --- NAV --- */
         nav {
             position: fixed; top: 0; width: 100%; z-index: 900;
             display: flex; justify-content: space-between; align-items: center;
@@ -49,85 +49,48 @@
         }
         .nav-logo { font-family: var(--police-titre); font-size: 2rem; letter-spacing: 4px; color: var(--color-texte); text-decoration: none; }
         .nav-links { display: flex; gap: 3rem; list-style: none; }
-        .nav-links a { 
-            font-family: var(--police-label); font-size: 0.7rem; text-transform: uppercase; 
-            letter-spacing: 2px; color: var(--color-texte); text-decoration: none; opacity: 0.6;
-        }
+        .nav-links a { font-family: var(--police-label); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--color-texte); text-decoration: none; opacity: 0.6; }
 
         /* --- HERO --- */
         #hero {
-            height: 100vh; display: grid; grid-template-columns: 1fr 1fr;
+            height: 100vh; display: grid; grid-template-columns: 1fr 1.2fr;
             align-items: center; position: relative;
         }
         .hero-text { padding: 0 4rem; z-index: 2; }
-        .hero-label { font-family: var(--police-label); color: var(--color-accent); font-size: 0.8rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 1.5rem; display: block; }
-        .hero-title { font-family: var(--police-titre); font-size: clamp(5rem, 12vw, 10rem); line-height: 0.85; margin-bottom: 2rem; }
+        .hero-label { font-family: var(--police-label); color: var(--color-accent); font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 1.5rem; display: block; }
+        .hero-title { font-family: var(--police-titre); font-size: clamp(4rem, 10vw, 8rem); line-height: 0.85; margin-bottom: 2rem; }
         .hero-title span { -webkit-text-stroke: 1px var(--color-accent); color: transparent; }
         
-        .hero-img-container {
-            height: 100%; position: relative; overflow: hidden;
-        }
-        .hero-img-container img {
-            width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.2);
-        }
-        .hero-img-container::after {
-            content: ''; position: absolute; inset: 0;
-            background: linear-gradient(to right, var(--color-fond), transparent 40%);
-        }
-
-        /* --- MARQUEE --- */
-        .marquee { background: var(--color-accent); padding: 1rem 0; overflow: hidden; white-space: nowrap; display: flex; }
-        .marquee-inner { display: flex; animation: scroll 30s linear infinite; gap: 4rem; }
-        .marquee span { font-family: var(--police-titre); color: var(--color-fond); font-size: 1.5rem; text-transform: uppercase; }
-        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .hero-img-container { height: 100%; position: relative; overflow: hidden; }
+        .hero-img-container img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.1); }
+        .hero-img-container::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, var(--color-fond), transparent 30%); }
 
         /* --- SERVICES --- */
-        #services { padding: 10rem 4rem; max-width: 1600px; margin: 0 auto; }
-        .section-intro { text-align: center; margin-bottom: 8rem; }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 4rem; }
+        #services { padding: 10rem 4rem; max-width: 1400px; margin: 0 auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; }
         
-        .service-card { position: relative; background: var(--color-fond-clair); transition: var(--transition); border-bottom: 1px solid transparent; }
-        .service-card:hover { border-bottom: 1px solid var(--color-accent); transform: translateY(-10px); }
+        .service-card { background: var(--color-fond-clair); transition: var(--transition); border: 1px solid rgba(200, 169, 110, 0.05); }
+        .service-card:hover { transform: translateY(-10px); border-color: var(--color-accent); }
         
         .service-media { width: 100%; aspect-ratio: 4/5; overflow: hidden; }
         .service-media img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: var(--transition); }
-        .service-card:hover .service-media img { filter: grayscale(0) brightness(0.8); transform: scale(1.05); }
+        .service-card:hover .service-media img { filter: grayscale(0); }
         
-        .service-info { padding: 2.5rem; }
-        .service-name { font-family: var(--police-titre); font-size: 2.5rem; margin-bottom: 1rem; letter-spacing: 1px; }
-        .service-desc { color: var(--color-gris); font-style: italic; margin-bottom: 2rem; font-size: 1.1rem; }
-        .service-meta { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem; }
-        .price { font-family: var(--police-label); color: var(--color-accent); font-size: 1.2rem; }
+        .service-info { padding: 2rem; }
+        .service-name { font-family: var(--police-titre); font-size: 2rem; margin-bottom: 1rem; }
+        .price { font-family: var(--police-label); color: var(--color-accent); font-size: 1.1rem; }
 
-        /* --- ÉQUIPE --- */
-        #team { padding: 10rem 4rem; background: var(--color-fond-clair); }
-        .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 5rem; }
-        .barber { text-align: center; }
-        .barber-img { width: 100%; aspect-ratio: 1/1; border-radius: 50%; overflow: hidden; margin-bottom: 2rem; filter: grayscale(1); border: 1px solid var(--color-accent-dim); }
-        .barber-img img { width: 100%; height: 100%; object-fit: cover; }
+        /* --- FOOTER --- */
+        footer { padding: 6rem 4rem; border-top: 1px solid rgba(200,169,110,0.1); display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; }
+        .hours-row { display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-family: var(--police-label); font-size: 0.7rem; }
 
-        /* --- FOOTER / CONTACT --- */
-        footer { padding: 6rem 4rem; border-top: 1px solid rgba(200,169,110,0.1); }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; }
-        .contact-info h3 { font-family: var(--police-titre); font-size: 3rem; color: var(--color-accent); margin-bottom: 2rem; }
-        .hours-row { display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-family: var(--police-label); font-size: 0.7rem; }
-
-        .cta-btn { 
-            display: inline-block; padding: 1.5rem 3rem; background: var(--color-accent); color: var(--color-fond); 
-            font-family: var(--police-label); text-decoration: none; text-transform: uppercase; font-size: 0.8rem; 
-            letter-spacing: 2px; margin-top: 2rem; transition: 0.3s;
-        }
-        .cta-btn:hover { background: var(--color-texte); }
-
-        .reveal { opacity: 0; transform: translateY(40px); transition: 1s ease-out; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: 1s ease-out; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
 
-        @media (max-width: 900px) {
-            #hero { grid-template-columns: 1fr; text-align: center; }
-            .hero-img-container { display: none; }
-            .nav-links, #cursor { display: none; }
-            .footer-grid { grid-template-columns: 1fr; }
-            .services-grid { grid-template-columns: 1fr; }
+        @media (max-width: 768px) {
+            #hero { grid-template-columns: 1fr; }
+            .hero-img-container { position: absolute; inset: 0; opacity: 0.3; z-index: 1; }
+            nav, .nav-links { padding: 1.5rem; display: none; }
         }
     </style>
 </head>
@@ -138,128 +101,69 @@
 <nav>
     <a href="#" class="nav-logo">THE LOFT</a>
     <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#team">L'Équipe</a></li>
-        <li><a href="https://www.planity.com/le-loft-barber-shop-75019-paris">Planity</a></li>
+        <li><a href="#services">Prestations</a></li>
+        <li><a href="https://www.planity.com/le-loft-barber-shop-75019-paris">Réserver</a></li>
     </ul>
 </nav>
 
 <section id="hero">
     <div class="hero-text">
-        <span class="hero-label">Artisan Barbier — Paris XI</span>
-        <h1 class="hero-title">L'EXCELLENCE<br><span>DU STYLE</span></h1>
-        <p style="font-size: 1.3rem; font-style: italic; color: var(--color-gris); max-width: 500px; margin-bottom: 3rem;">
-            Depuis 2009, nous sculptons le caractère de l'homme moderne avec la précision du geste ancestral.
-        </p>
-        <a href="https://www.planity.com/le-loft-barber-shop-75019-paris" class="cta-btn">Réserver mon expérience</a>
+        <span class="hero-label">Depuis 2009 • Paris</span>
+        <h1 class="hero-title">L'ART DE LA<br><span>COUPURE</span></h1>
+        <a href="https://www.planity.com/le-loft-barber-shop-75019-paris" style="display:inline-block; padding: 1.2rem 2.5rem; background: var(--color-accent); color: var(--color-fond); text-decoration: none; font-family: var(--police-label); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;">Prendre RDV</a>
     </div>
     <div class="hero-img-container">
-        <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2000&auto=format&fit=crop" alt="The Loft Interior">
+        <img src="IMG_3735.jpg" alt="Le Loft Salon">
     </div>
 </section>
 
-<div class="marquee">
-    <div class="marquee-inner">
-        <span>The Loft Barber Shop ✦ Tradition ✦ Style ✦ Précision ✦ Excellence ✦ The Loft Barber Shop ✦ Tradition ✦ Style ✦ Précision ✦ Excellence ✦</span>
-        <span>The Loft Barber Shop ✦ Tradition ✦ Style ✦ Précision ✦ Excellence ✦ The Loft Barber Shop ✦ Tradition ✦ Style ✦ Précision ✦ Excellence ✦</span>
-    </div>
-</div>
-
 <section id="services">
-    <div class="section-intro reveal">
-        <span class="hero-label">Menu de soins</span>
-        <h2 class="hero-title" style="font-size: 5rem;">NOS <span>RITUELS</span></h2>
-    </div>
-
     <div class="services-grid">
         <div class="service-card reveal">
             <div class="service-media">
-                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=1000&auto=format&fit=crop" alt="Coupe Homme">
+                <img src="IMG_3750.jpg" alt="Coupe Classique">
             </div>
             <div class="service-info">
-                <h3 class="service-name">Coupe Loft</h3>
-                <p class="service-desc">Diagnostic visagiste, coupe aux ciseaux et tondeuse, shampoing massant et coiffage.</p>
-                <div class="service-meta">
-                    <span class="price">19 €</span>
-                    <span class="hero-label" style="margin:0; font-size:0.6rem;">45 MIN</span>
-                </div>
+                <h3 class="service-name">Coupe Classique</h3>
+                <p style="color: var(--color-gris); font-style: italic; margin-bottom: 1.5rem;">Diagnostic, coupe personnalisée et finitions.</p>
+                <span class="price">19 €</span>
             </div>
         </div>
 
         <div class="service-card reveal">
             <div class="service-media">
-                <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1000&auto=format&fit=crop" alt="Barbe">
+                <img src="IMG_3755.jpg" alt="Rasage Traditionnel">
             </div>
             <div class="service-info">
-                <h3 class="service-name">Barbe Tradition</h3>
-                <p class="service-desc">Taille sculptée au coupe-chou, serviette chaude, huile de soin et massage facial.</p>
-                <div class="service-meta">
-                    <span class="price">15 €</span>
-                    <span class="hero-label" style="margin:0; font-size:0.6rem;">30 MIN</span>
-                </div>
+                <h3 class="service-name">Rasage à l'Ancienne</h3>
+                <p style="color: var(--color-gris); font-style: italic; margin-bottom: 1.5rem;">Serviette chaude, blaireau et coupe-chou.</p>
+                <span class="price">15 €</span>
             </div>
         </div>
 
         <div class="service-card reveal">
             <div class="service-media">
-                <img src="https://images.unsplash.com/photo-1512690118294-70036713dc35?q=80&w=1000&auto=format&fit=crop" alt="Rasage">
+                <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=800" alt="Entretien Barbe">
             </div>
             <div class="service-info">
-                <h3 class="service-name">Le Grand Rituel</h3>
-                <p class="service-desc">Le combo ultime : Coupe Signature & Barbe Traditionnelle avec soin vapeur.</p>
-                <div class="service-meta">
-                    <span class="price">25 €</span>
-                    <span class="hero-label" style="margin:0; font-size:0.6rem;">75 MIN</span>
-                </div>
+                <h3 class="service-name">Taille de Barbe</h3>
+                <p style="color: var(--color-gris); font-style: italic; margin-bottom: 1.5rem;">Sculpture et hydratation aux huiles.</p>
+                <span class="price">10 €</span>
             </div>
-        </div>
-    </div>
-</section>
-
-<section id="team">
-    <div class="section-intro reveal">
-        <span class="hero-label">Les Artisans</span>
-        <h2 class="hero-title" style="font-size: 4rem;">L'<span>ÉQUIPE</span></h2>
-    </div>
-    <div class="team-grid">
-        <div class="barber reveal">
-            <div class="barber-img"><img src="https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?q=80&w=600&auto=format&fit=crop" alt="Barbier 1"></div>
-            <h3 class="service-name" style="font-size: 1.5rem;">MARCUS</h3>
-            <span class="hero-label">Maître Barbier</span>
-        </div>
-        <div class="barber reveal">
-            <div class="barber-img"><img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=600&auto=format&fit=crop" alt="Barbier 2"></div>
-            <h3 class="service-name" style="font-size: 1.5rem;">STÉPHANE</h3>
-            <span class="hero-label">Expert Dégradé</span>
-        </div>
-        <div class="barber reveal">
-            <div class="barber-img"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop" alt="Barbier 3"></div>
-            <h3 class="service-name" style="font-size: 1.5rem;">SAMI</h3>
-            <span class="hero-label">Spécialiste Barbe</span>
         </div>
     </div>
 </section>
 
 <footer>
-    <div class="footer-grid">
-        <div class="contact-info">
-            <h2 class="nav-logo">THE LOFT</h2>
-            <p style="margin: 2rem 0; opacity: 0.6;">L'art de la coiffure pour l'homme qui sait où il va. Paris XI.</p>
-            <h3>RESTEZ NET.</h3>
-        </div>
-        <div>
-            <span class="hero-label">Horaires</span>
-            <div class="hours-row"><span>Mar — Ven</span><span>09:00 — 20:00</span></div>
-            <div class="hours-row"><span>Samedi</span><span>09:00 — 19:00</span></div>
-            <div class="hours-row"><span>Dimanche</span><span>10:00 — 16:00</span></div>
-            <div class="hours-row"><span>Lundi</span><span style="color: var(--color-accent)">Fermé</span></div>
-        </div>
-        <div>
-            <span class="hero-label">Adresse</span>
-            <p style="margin-top: 1rem;">42 Rue du Faubourg Saint-Antoine</p>
-            <p>75011 Paris</p>
-            <p style="margin-top: 2rem; color: var(--color-accent);">01 42 00 12 34</p>
-        </div>
+    <div>
+        <h2 class="nav-logo">THE LOFT</h2>
+        <p style="margin-top: 1rem; color: var(--color-gris);">42 Rue du Faubourg Saint-Antoine, 75011 Paris</p>
+    </div>
+    <div>
+        <span class="hero-label">Horaires</span>
+        <div class="hours-row"><span>Mar — Ven</span><span>09:00 — 20:00</span></div>
+        <div class="hours-row"><span>Samedi</span><span>09:00 — 19:00</span></div>
+        <div class="hours-row"><span>Dimanche</span><span>10:00 — 16:00</span></div>
     </div>
 </footer>
 
@@ -270,7 +174,7 @@
         cursor.style.top = e.clientY + 'px';
     });
 
-    document.querySelectorAll('a, .service-card, button').forEach(el => {
+    document.querySelectorAll('a, .service-card').forEach(el => {
         el.addEventListener('mouseenter', () => cursor.classList.add('cursor-big'));
         el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-big'));
     });
